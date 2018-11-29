@@ -1,0 +1,27 @@
+<div class="card-container">
+  <div class="card" *ngFor="let i of [1, 1, 1, 1, 1, 1]">
+    <div class="card-header bg-info">Addeddas</div>
+    <div class="card-body">
+      <div class="prod-img">
+        <img src="../../../../assets/sh4.jpg" alt="" />
+      </div>
+
+      <div class="info">
+        <div class="price-rate">
+          <div class="prod-price"><p class="price">123 $</p></div>
+          <div class="prod-rate">
+            <rating
+              [(ngModel)]="rate"
+              [max]="5"
+              fullIcon="★"
+              emptyIcon="☆"
+              [titles]="['one', 'two', 'three', 'four', 'five']"
+            >
+            </rating>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer bg-success">add to cart</div>
+  </div>
+</div>

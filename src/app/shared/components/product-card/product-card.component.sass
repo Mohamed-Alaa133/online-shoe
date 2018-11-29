@@ -1,0 +1,54 @@
+.card-container
+  width: 90%
+  margin: 5%
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: 3%
+
+
+  .card
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+    .card-header, .card-footer
+      text-align: center
+      color: #fff
+      font-size: 20px
+
+    .card-body
+      // height: 300px
+      padding: 0px
+      .prod-img
+        width: 100%
+        height: 200px
+        img
+          width: 100%
+          height: 100%
+
+      .info
+        margin-top: 15px
+        margin-bottom: 0px
+        padding: 2%
+        .price-rate
+          display: grid
+          grid-template-columns: repeat(2, 1fr)
+          grid-area: 1%
+          // background-color: #eee
+          line-height: 30px
+
+          .prod-rate
+            // background-color: #dad
+
+          .prod-price
+            p
+              line-height: 30px
+              font-size: 20px
+              font-weight: bold
+              color: #685daa
+
+        .prod-name
+          p
+            line-height: 30px
+            font-size: 20px
+            font-weight: normal
+            color: #aa5d93
+            margin: 0px
+
