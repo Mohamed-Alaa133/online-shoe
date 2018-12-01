@@ -15,10 +15,13 @@
   </div>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <button class="btn btn-light">Home</button>
-    <button class="btn btn-light">Search</button>
-    <button class="btn btn-light">Contact Us</button>
-    <button class="btn btn-light"><i class="fas fa-shopping-cart">2</i></button>
+    <a class="btn btn-light" [routerLink]="['/home']" routerLinkActive="active"
+      >Home</a
+    >
+    <a class="btn btn-light">Search</a> <a class="btn btn-light">Contact Us</a>
+    <a class="btn btn-light" [routerLink]="['/cart']" routerLinkActive="active"
+      ><i class="fas fa-shopping-cart">2</i></a
+    >
 
     <div class="dropdown">
       <button

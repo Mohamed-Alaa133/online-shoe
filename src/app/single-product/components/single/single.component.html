@@ -1,0 +1,103 @@
+<div class="single-container">
+  <div class="filter-container">
+    <div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#filterToggle"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon">filter</span>
+      </button>
+      <span class="search"><input type="text"/></span>
+    </div>
+
+    <div class="collapse navbar-collapse" id="filterToggle">
+      <div class="toggle-filter">
+        <div class="category-filter filter">
+          <h5>category</h5>
+          <div class="filter-item" *ngFor="let i of [1, 2, 3, 4]">
+            <input type="checkbox" id="cat{{i}}" />
+            <label for="cat{{i}}"> category {{ i }}</label>
+          </div>
+        </div>
+        <div class="price-filter filter">
+          <h5>price</h5>
+          <div class="filter-item" *ngFor="let i of [1, 2, 3, 4]">
+            <input type="checkbox" id="price{{i}}" />
+            <label for="price{{i}}"> price {{ i }}</label>
+          </div>
+        </div>
+        <div class="size-filter filter">
+          <h5>size</h5>
+          <div class="filter-item" *ngFor="let i of [1, 2, 3, 4]">
+            <input type="checkbox" id="size{{i}}" />
+            <label for="size{{i}}"> size {{ i }}</label>
+          </div>
+        </div>
+        <div class="brand-filter filter">
+          <h5>brand</h5>
+          <div class="filter-item" *ngFor="let i of [1, 2, 3, 4]">
+            <input type="checkbox" id="brand{{i}}" />
+            <label for="brand{{i}}"> barnd {{ i }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-container">
+    <div class="imgs">
+      <div class="prod-image">
+        <img src="../../../../assets/sh1.webp" alt="" />
+      </div>
+      <div class="mini-imgs">
+        <img [src]="i" alt="" *ngFor="let i of imgs" />
+      </div>
+    </div>
+    <div class="prod-info">
+      <h5 class="prod-brand">Addiddas</h5>
+      <div class="prod-rate">
+        <rating
+          [(ngModel)]="rate"
+          [max]="5"
+          fullIcon="★"
+          emptyIcon="☆"
+          readonly="true"
+          [titles]="['one', 'two', 'three', 'four', 'five']"
+        >
+        </rating>
+      </div>
+
+      <div class="price">
+        <h4>Price : <span class="price-number">123 $</span></h4>
+        <div class="discound">
+          <h4>
+            <span class="old-price">234 $</span>
+            <span class="discound-number">40 % off</span>
+          </h4>
+        </div>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem omnis
+        quod commodi unde aliquam sed alias quidem. Placeat deserunt esse
+        consequatur reiciendis assumenda aspernatur architecto dignissimos,
+        iusto ad rerum! Soluta.
+      </p>
+
+      <h6 class="size-header">available size</h6>
+      <div class="sizes">
+        <div class="size-btn" *ngFor="let i of [37, 38, 40, 43, 44]">
+          <button class="btn btn-light">{{ i }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-container">
+    <div class="feature-header"><h4>Featured Product</h4></div>
+
+    <app-product-card></app-product-card>
+  </div>
+</div>

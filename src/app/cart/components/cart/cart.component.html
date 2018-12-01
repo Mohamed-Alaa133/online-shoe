@@ -1,0 +1,177 @@
+<div class="cart-container">
+  <div class="products">
+    <div class="product">
+      <div class="img-qty">
+        <div class="prod-img">
+          <img src="../../../../assets/sh4.jpg" alt="pro image" />
+        </div>
+        <div class="operation">
+          <button class="btn-light">+</button>
+          <input type="text" placeholder="1" />
+          <button class="btn-light btn-sub">-</button>
+        </div>
+      </div>
+
+      <div class="prod-info">
+        <h5 class="brand-header">Addiddass</h5>
+        <div class="selection">
+          <div class="selection-info">
+            <h6>
+              size : <span><button class="btn btn-light">42</button></span>
+            </h6>
+            <h6>
+              color : <span><button class="btn btn-light">red</button></span>
+            </h6>
+          </div>
+        </div>
+
+        <div class="discound">
+          <h5 class="price">123 $</h5>
+          <h4>
+            <span class="old-price">234 $</span>
+            <span class="discound-number">40 % off</span>
+          </h4>
+        </div>
+
+        <div class="total-per-product">
+          <h6>total : <span class="total-product">123</span></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card total">
+    <div class="card-header bg-dark">Total Cost</div>
+    <div class="card-body">
+      <div class="body-line">
+        <h6>product cost :</h6>
+        <h6>123</h6>
+      </div>
+
+      <div class="body-line">
+        <h6>delivery cost :</h6>
+        <h6>123</h6>
+      </div>
+
+      <div class="body-line">
+        <h6>total cost :</h6>
+        <h6>123</h6>
+      </div>
+    </div>
+    <div
+      class="card-footer bg-success"
+      data-toggle="modal"
+      data-target="#confirm-order-modal"
+    >
+      Make Order
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="confirm-order-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">add xray</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userForm">
+          <div class="form-group row">
+            <label for="name" class="col-2 col-form-label">name</label>
+            <div class="col-10">
+              <input
+                class="form-control"
+                type="text"
+                id="name"
+                formControlName="name"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="phone" class="col-2 col-form-label">phone</label>
+            <div class="col-10">
+              <input
+                class="form-control"
+                type="text"
+                id="phone"
+                formControlName="phone"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="governate" class="col-2 col-form-label"
+              >governate</label
+            >
+            <div class="col-10">
+              <input
+                class="form-control"
+                type="text"
+                id="governate"
+                formControlName="governate"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="city" class="col-2 col-form-label">city</label>
+            <div class="col-10">
+              <input
+                class="form-control"
+                type="text"
+                id="city"
+                formControlName="city"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="address" class="col-2 col-form-label">address</label>
+            <div class="col-10">
+              <input
+                class="form-control"
+                type="text"
+                id="address"
+                formControlName="address"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          id="orderModalCancle"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="confirmOrder()"
+        >
+          confirm Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+$color-primary: #203c4c
+$color-secondary: #cb6060
+$color-header: #487cd8
+
+// media break points
+$phone_break_point: 576px
+$tablet_break_point: 768px
+$medium_break_point: 992px
+$large_break_point: 1199px
+
+// media query
+=phone
+  @media(max-width: $phone_break_point)
+    @content
+
+=medium
+  @media(max-width: $medium_break_point)
+    @content
+
+=large
+  @media(max-width: $large_break_point)
+    @content
+
+.circle-button
+  border-radius: 20px
+
+.dark-button
+  color: #fff
+
+.div-container
+  width: 100%
+  padding: 3%
+  margin: 3% 0px
+  border: 1px solid #ddd
+  border-radius: 10px
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+
+
+
+
