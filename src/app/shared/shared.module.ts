@@ -6,6 +6,8 @@ import { ProductCardComponent } from "./components/product-card/product-card.com
 import { RatingModule } from "ngx-rating";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { CartService } from "./services/cart.service";
 
 @NgModule({
   imports: [
@@ -13,7 +15,8 @@ import { RouterModule } from "@angular/router";
     RatingModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   declarations: [HeaderComponent, FooterComponent, ProductCardComponent],
   exports: [

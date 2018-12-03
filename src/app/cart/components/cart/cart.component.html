@@ -1,14 +1,16 @@
 <div class="cart-container">
   <div class="products">
-    <div class="product">
+    <div class="product" *ngFor="let p of cartProducts.prods">
       <div class="img-qty">
         <div class="prod-img">
           <img src="../../../../assets/sh4.jpg" alt="pro image" />
         </div>
         <div class="operation">
-          <button class="btn-light">+</button>
-          <input type="text" placeholder="1" />
-          <button class="btn-light btn-sub">-</button>
+          <button class="btn-light" (click)="ModifyCart('add', p)">+</button>
+          <input type="text" placeholder="{{p.amount}}" readonly="true" />
+          <button class="btn-light btn-sub" (click)="ModifyCart('sub', p)">
+            -
+          </button>
         </div>
       </div>
 
