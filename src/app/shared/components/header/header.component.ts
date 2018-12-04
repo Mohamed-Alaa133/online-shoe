@@ -28,9 +28,9 @@ export class HeaderComponent implements OnInit {
 
   test() {
     this.cartService.getTotal$().subscribe(data => {
-      this.total$ = data;
+      this.total$ = data.totalnumber;
     });
 
-    this.total$ = JSON.parse(localStorage.getItem("cart"));
+    this.total$ = JSON.parse(localStorage.getItem("cart")).totalnumber;
   }
 }

@@ -1,6 +1,6 @@
 <div class="card-container">
   <div class="card" *ngFor="let p of products">
-    <div class="card-header bg-info">Addeddas</div>
+    <div class="card-header bg-info">{{p.product_name}}</div>
     <div class="card-body" (click)="goToSingleProduct()">
       <div class="prod-img">
         <img src="./../../../../assets/sh1.webp" alt="" />
@@ -8,7 +8,7 @@
 
       <div class="info">
         <div class="price-rate">
-          <div class="prod-price"><p class="price">123 $</p></div>
+          <div class="prod-price"><p class="price">{{p.product_sale_price}}</p></div>
           <div class="prod-rate">
             <rating
               [(ngModel)]="rate"

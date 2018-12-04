@@ -10,7 +10,8 @@ import { Router } from "@angular/router";
 })
 export class ProductCardComponent implements OnInit {
   rate = 3;
-  products: any;
+  products;
+  filteredProduct = [];
   constructor(
     private router: Router,
     private cartService: CartService,
@@ -22,10 +23,11 @@ export class ProductCardComponent implements OnInit {
   }
 
   getProducts() {
-    const url = "http://localhost:63411/api/Product/getAll";
+    const url = "http://localhost:63411/api/Product/getProductsDetails";
     this.httpService.get(url).subscribe(data => {
       console.log(data);
       this.products = data;
+      // this.filteredProduct = this.products.fiter();
     });
   }
   goToSingleProduct() {

@@ -15,20 +15,26 @@
       </div>
 
       <div class="prod-info">
-        <h5 class="brand-header">Addiddass</h5>
+        <h5 class="brand-header">{{ p.product_name }}</h5>
         <div class="selection">
           <div class="selection-info">
             <h6>
-              size : <span><button class="btn btn-light">42</button></span>
+              size :
+              <span
+                ><button class="btn btn-light">{{ p.size }}</button></span
+              >
             </h6>
             <h6>
-              color : <span><button class="btn btn-light">red</button></span>
+              color :
+              <span
+                ><button class="btn btn-light">{{ p.color_id }}</button></span
+              >
             </h6>
           </div>
         </div>
 
         <div class="discound">
-          <h5 class="price">123 $</h5>
+          <h5 class="price">{{ p.product_sale_price }} $</h5>
           <h4>
             <span class="old-price">234 $</span>
             <span class="discound-number">40 % off</span>
@@ -47,7 +53,7 @@
     <div class="card-body">
       <div class="body-line">
         <h6>product cost :</h6>
-        <h6>123</h6>
+        <h6>{{ 123 }}</h6>
       </div>
 
       <div class="body-line">
@@ -57,7 +63,7 @@
 
       <div class="body-line">
         <h6>total cost :</h6>
-        <h6>123</h6>
+        <h6>{{ total$ }}</h6>
       </div>
     </div>
     <div
