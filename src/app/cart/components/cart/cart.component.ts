@@ -36,20 +36,22 @@ export class CartComponent implements OnInit {
   }
 
   ModifyCart(operation, p) {
+    const index = this.cartProducts.prods.findIndex(
+      i => i.product_id === p.product_id
+    );
     switch (operation) {
       case "add":
         p.amount++;
+        this.calculateProductTotalPrice(p, index);
         this.cartService.modify(p);
         break;
       case "sub":
         p.amount--;
         if (p.amount === 0) {
-          const index = this.cartProducts.prods.findIndex(
-            i => i.product_id === p.product_id
-          );
           this.cartProducts.prods.splice(index, 1);
           this.cartService.deleteProduct(p.product_id);
         } else {
+          this.calculateProductTotalPrice(p, index);
           this.cartService.modify(p);
         }
         break;
@@ -57,7 +59,6 @@ export class CartComponent implements OnInit {
       default:
         break;
     }
-    // this.calculateProductTotalPrice(p);
   }
 
   test() {
@@ -68,25 +69,16 @@ export class CartComponent implements OnInit {
     this.total$ = JSON.parse(localStorage.getItem("cart")).totalPrice;
   }
 
-  calculateProductTotalPrice(product) {
-    const totalPrice = product.amount * product.product_sale_price;
-    const newPrice = {};
-    // if (this.checkProductIfExist(product)) {
-    //   this.prices[product.product_id] = totalPrice;
-    // } else {
-
-    // }
-    // let priceObject = {};
-    // priceObject[product.product_id] = totalPrice;
-    // console.log(priceObject);
-    // return priceObject;
+  calculateProductTotalPrice(product, index) {
+    this.cartProducts.prods[index].totalPrice =
+      product.amount * product.product_sale_price;
   }
 
-  checkProductIfExist(product) {
-    const index = this.cartProducts.prods.findIndex(
-      i => i.product_id === product.product_id
-    );
+  // checkProductIfExist(product) {
+  //   const index = this.cartProducts.prods.findIndex(
+  //     i => i.product_id === product.product_id
+  //   );
 
-    return index < 0 ? false : true;
-  }
+  //   return index < 0 ? false : true;
+  // }
 }

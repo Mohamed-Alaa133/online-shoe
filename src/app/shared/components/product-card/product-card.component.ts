@@ -37,6 +37,7 @@ export class ProductCardComponent implements OnInit {
   addToCart(p) {
     console.log("add to cart", p);
     p.amount = 1;
+    p.totalPrice = p.amount * p.product_sale_price;
     this.cartService.modify(p);
   }
 }

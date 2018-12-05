@@ -48,14 +48,9 @@ export class CartService {
 
     //  calculate total price of all products
     const price = this.cart_obj.prods
-      .map(e => {
-        const returnObj = { amount: Number, price: Number };
-        returnObj.amount = e.amount;
-        returnObj.price = e.product_sale_price;
-        return returnObj;
-      })
+      .map(e => e.totalPrice)
       .reduce((p, c) => {
-        return p + c.amount * c.price;
+        return p + c;
       }, 0);
 
     this.cart_obj.totalPrice = price;
