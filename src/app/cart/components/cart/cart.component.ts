@@ -1,3 +1,4 @@
+import { HttpService } from "./../../../shared/services/http.service";
 import { CartService } from "./../../../shared/services/cart.service";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
@@ -14,7 +15,11 @@ export class CartComponent implements OnInit {
   prods: any;
   total$: any;
   productPrice: any;
-  constructor(private fb: FormBuilder, private cartService: CartService) {
+  constructor(
+    private fb: FormBuilder,
+    private cartService: CartService,
+    private httpService: HttpService
+  ) {
     this.userForm = this.fb.group({
       name: [],
       phone: [],
@@ -31,6 +36,23 @@ export class CartComponent implements OnInit {
 
   confirmOrder() {
     console.log("confirm order function", this.userForm.value);
+    const obj = {
+      c: this.userForm.value,
+      details: this.cartProducts.prods,
+      totalPrice: this.cartProducts.totalPrice
+    };
+
+    this.httpService
+      .post("http://localhost:63411/api/online/addCustomer", obj)
+      .subscribe(
+        data => {
+          console.log("success add customer", data);
+        },
+        (error: Response) => {
+          console.log("error adding customer ", error);
+        }
+      );
+
     const btn = document.getElementById("orderModalCancle");
     btn.click();
   }

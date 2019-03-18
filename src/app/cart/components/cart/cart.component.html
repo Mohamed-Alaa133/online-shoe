@@ -7,7 +7,7 @@
         </div>
         <div class="operation">
           <button class="btn-light" (click)="ModifyCart('add', p)">+</button>
-          <input type="text" placeholder="{{p.amount}}" readonly="true" />
+          <input type="text" placeholder="{{ p.amount }}" readonly="true" />
           <button class="btn-light btn-sub" (click)="ModifyCart('sub', p)">
             -
           </button>
@@ -42,7 +42,9 @@
         </div>
 
         <div class="total-per-product">
-          <h6>total : <span class="total-product">{{p.totalPrice}}</span></h6>
+          <h6>
+            total : <span class="total-product">{{ p.totalPrice }}</span>
+          </h6>
         </div>
       </div>
     </div>
@@ -87,7 +89,9 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">add xray</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Delievery Details
+        </h5>
         <button
           type="button"
           class="close"
